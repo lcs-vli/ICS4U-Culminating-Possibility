@@ -19,32 +19,31 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         
         
         //define the L system
-        var system = LindenmayerSystem(axiom: "XXF",
+        var system = LindenmayerSystem(axiom: "XF",
                                        rules: [
                                         "F": [
-                                            Successor(odds: 1, text: "F+[J]F-[J]"),
-                                            Successor(odds: 4, text: "F-[J]F+[J]"),
+                                            Successor(odds: 1, text: "F[---J][--J][-J][+J]"),
                                         ],
                                         "J": [
-                                            Successor(odds: 1, text: "XXXF+[J]F-[J]"),
-                                            Successor(odds: 10, text: "XXXF-[J]F+[J]"),
+                                            Successor(odds: 1, text: "J[+XJ]XJ[-XJ]"),
+                                            Successor(odds: 5, text: "J[-XJ]XJ[+XJ][XJ]"),
                                         ]
                                        ],
-                                       generations: 4)
+                                       generations: 5)
         
         //Visualize the system
         var visualizeSystem  = Visualizer(for: system,
                                           on: canvas,
-                                          length: 20,
-                                          reduction: 1.15,
-                                          angle: 18.5,
-                                          initialPosition: Point(x: 250, y: 100),
+                                          length: 16,
+                                          reduction: 1.25,
+                                          angle: 15.5,
+                                          initialPosition: Point(x: 150, y: 80),
                                           initialHeading: 90)
-        
-        //visualizeSystem  = Visualizer(fromJSONFile: "scott-berry-tree", drawingOn: canvas)
         
         //render the system
         visualizeSystem.render()
+        
+        visualizeSystem.printJSONRepresentation()
     }
     
     // This function runs repeatedly, forever, to create the animated effect
