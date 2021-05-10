@@ -29,21 +29,30 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                             Successor(odds: 5, text: "J[-XJ]XJ[+XJ][XJ]"),
                                         ]
                                        ],
-                                       generations: 5)
+                                       generations: 4)
         
         //Visualize the system
         var visualizeSystem  = Visualizer(for: system,
                                           on: canvas,
-                                          length: 16,
+                                          length: 5,
                                           reduction: 1.25,
                                           angle: 15.5,
-                                          initialPosition: Point(x: 150, y: 80),
+                                          initialPosition: Point(x: 280, y: 250),
                                           initialHeading: 90)
         
+        var system2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
+        var system3 = Visualizer(fromJSONFile: "scott-berry-tree", drawingOn: canvas)
+        var system4 = Visualizer(fromJSONFile: "sihan-tree", drawingOn: canvas)
+        var system5 = Visualizer(fromJSONFile: "gordon-basic-branching-tree", drawingOn: canvas)
+            
         //render the system
         visualizeSystem.render()
+        system2.render()
+        system3.render()
+        system4.render()
+        system5.render()
         
-        visualizeSystem.printJSONRepresentation()
+        
     }
     
     // This function runs repeatedly, forever, to create the animated effect

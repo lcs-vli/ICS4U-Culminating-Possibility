@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54532C822645C45F00060D18 /* aidan-berry-bush.json in Resources */ = {isa = PBXBuildFile; fileRef = 54532C812645C45F00060D18 /* aidan-berry-bush.json */; };
+		5466A54F2649A7F60087C235 /* sihan-tree.json in Resources */ = {isa = PBXBuildFile; fileRef = 5466A54E2649A7F60087C235 /* sihan-tree.json */; };
 		54F1A6862645BA42007D4060 /* Predecessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1A6822645BA41007D4060 /* Predecessor.swift */; };
 		54F1A6872645BA42007D4060 /* LindenmayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1A6832645BA42007D4060 /* LindenmayerSystem.swift */; };
 		54F1A6882645BA42007D4060 /* Successor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1A6842645BA42007D4060 /* Successor.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		54532C812645C45F00060D18 /* aidan-berry-bush.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "aidan-berry-bush.json"; sourceTree = "<group>"; };
+		5466A54E2649A7F60087C235 /* sihan-tree.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sihan-tree.json"; sourceTree = "<group>"; };
 		54F1A6822645BA41007D4060 /* Predecessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predecessor.swift; sourceTree = "<group>"; };
 		54F1A6832645BA42007D4060 /* LindenmayerSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LindenmayerSystem.swift; sourceTree = "<group>"; };
 		54F1A6842645BA42007D4060 /* Successor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Successor.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				54532C812645C45F00060D18 /* aidan-berry-bush.json */,
 				54F1A68D2645BAED007D4060 /* gordon-basic-branching-tree.json */,
 				54F1A68C2645BAED007D4060 /* scott-berry-tree.json */,
+				5466A54E2649A7F60087C235 /* sihan-tree.json */,
 			);
 			name = SystemCatalog;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				54532C822645C45F00060D18 /* aidan-berry-bush.json in Resources */,
 				54F1A68F2645BAED007D4060 /* gordon-basic-branching-tree.json in Resources */,
 				81064A0E1C130A10007ED524 /* Assets.xcassets in Resources */,
+				5466A54F2649A7F60087C235 /* sihan-tree.json in Resources */,
 				81064A111C130A10007ED524 /* Main.storyboard in Resources */,
 				54F1A68E2645BAED007D4060 /* scott-berry-tree.json in Resources */,
 			);

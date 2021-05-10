@@ -79,10 +79,10 @@
     },
     "generations" : 5
   },
-  "length" : 15,
+  "length" : 9,
   "angle" : 25,
-  "initialX" : 250,
+  "initialX" : 170,
   "initialHeading" : 90,
-  "reduction" : 1.25,
-  "initialY" : 100
+  "reduction" : 1.27,
+  "initialY" : 175
 }

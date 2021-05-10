@@ -1,6 +1,6 @@
 {
   "system" : {
-    "axiom" : "AF",
+    "axiom" : "AAAAAAF",
     "rules" : {
       "F" : [
         {
@@ -17,12 +17,12 @@
         }
       ]
     },
-    "generations" : 4
+    "generations" : 7
   },
-  "length" : 60,
+  "length" : 130,
   "angle" : 15,
-  "initialX" : 250,
+  "initialX" : 460,
   "initialHeading" : 90,
   "reduction" : 1.25,
-  "initialY" : 100
+  "initialY" : 0
 }

@@ -81,10 +81,10 @@
     },
     "generations" : 6
   },
-  "length" : 15,
+  "length" : 12,
   "angle" : 15,
-  "initialX" : 400,
+  "initialX" : 260,
   "initialHeading" : 90,
   "reduction" : 1.1000000000000001,
-  "initialY" : 25
+  "initialY" : 15
 }
