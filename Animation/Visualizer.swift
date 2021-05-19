@@ -191,9 +191,14 @@ struct Visualizer: Codable {
             
             // Render based on this character
             switch character {
-            case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
+            case "0":
                 // Placeholder for changing colour
+                turtle?.setPenColor(to: .yellow)
                 break
+            case "1":
+                turtle?.setPenColor(to: .orange)
+            case "2":
+                turtle?.setPenColor(to: .red)
             case "+":
                 // Turn to the left
                 turtle?.left(by: angle)
@@ -209,6 +214,7 @@ struct Visualizer: Codable {
             case "B":
                 // Render a small berry
                 canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 5, height: 5)
+                
             default:
                 // Any other character means move forward
                 turtle?.forward(steps: Int(round(currentLength)))

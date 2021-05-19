@@ -18,15 +18,15 @@
       ],
       "F" : [
         {
-          "text" : "X[-G][+G][G]",
+          "text" : "0X[-G][+G][G]",
           "odds" : 3
         },
         {
-          "text" : "XX[-G][+G][G]",
+          "text" : "0XX[-G][+G][G]",
           "odds" : 3
         },
         {
-          "text" : "XXX[-G][+G][G]",
+          "text" : "0XXX[-G][+G][G]",
           "odds" : 3
         }
       ],
