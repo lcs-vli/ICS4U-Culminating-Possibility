@@ -193,11 +193,14 @@ struct Visualizer: Codable {
             switch character {
             case "0":
                 // Placeholder for changing colour
-                turtle?.setPenColor(to: .yellow)
+                turtle?.setPenSize(to: 80)
+                turtle?.setPenColor(to: Color.init(hue: 0, saturation: 40, brightness: 50, alpha: 100))
                 break
             case "1":
+                turtle?.setPenSize(to: 8)
                 turtle?.setPenColor(to: .orange)
             case "2":
+                turtle?.setPenSize(to: 5)
                 turtle?.setPenColor(to: .red)
             case "+":
                 // Turn to the left

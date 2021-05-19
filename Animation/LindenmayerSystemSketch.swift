@@ -19,19 +19,15 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         
         
         //define the L system
-        var system = LindenmayerSystem(axiom: "0XF",
+        var system = LindenmayerSystem(axiom: "0XXF",
                                        rules: [
                                         "F": [
-                                            Successor(odds: 1, text: "0F[---J][--J][-J][+J]"),
+                                            Successor(odds: 1, text: "0J[-J][++J]"),
                                         ],
                                         "J": [
-                                            Successor(odds: 1, text: "1K[+XK]XK[-XK]"),
-                                            Successor(odds: 5, text: "1K[-XK]XK[+XK][XK]"),
+                                            Successor(odds: 1, text: "1XJ[-J][++J]"),
+                                            Successor(odds: 1, text: "1XJ[--J][+J]"),
                                         ],
-                                        "K": [
-                                            Successor(odds: 1, text: "2J[+XJ]XJ[-XJ]"),
-                                            Successor(odds: 5, text: "2J[-XJ]XJ[+XJ][XJ]"),
-                                        ]
                                        ],
                                        generations: 4)
         
@@ -41,7 +37,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           length: 50,
                                           reduction: 1.25,
                                           angle: 15.5,
-                                          initialPosition: Point(x: 250, y: 150),
+                                          initialPosition: Point(x: 250, y: 50),
                                           initialHeading: 90)
         
         //var system2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
