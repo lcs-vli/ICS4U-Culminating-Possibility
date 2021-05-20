@@ -13,7 +13,7 @@ struct Visualizer: Codable {
     
     // Identify what properties should be encoded to JSON
     enum CodingKeys: CodingKey {
-        case system, length, reduction, angle, initialX, initialY, initialHeading
+        case system, length, reduction, angle, initialX, initialY, initialHeading, radius
     }
     
     // Canvas to draw on
@@ -45,6 +45,8 @@ struct Visualizer: Codable {
     // The initial direction of the turtle
     var initialHeading: Degrees
     
+    var radius: Double
+    
     // Initializer to use when creating a visualization directly from code
     init(for system: LindenmayerSystem,
          on canvas: Canvas,
@@ -52,7 +54,8 @@ struct Visualizer: Codable {
          reduction: Double,
          angle: Degrees,
          initialPosition: Point,
-         initialHeading: Degrees) {
+         initialHeading: Degrees,
+         radius: Double) {
         
         // Set the canvas we will draw on
         self.canvas = canvas
@@ -83,6 +86,7 @@ struct Visualizer: Codable {
         // The initial direction of the turtle
         self.initialHeading = initialHeading
         
+        self.radius = radius
     }
     
     // Create an instance of this type by decoding from JSON
@@ -101,7 +105,7 @@ struct Visualizer: Codable {
         let y = try container.decode(Int.self, forKey: .initialY)
         initialPosition = Point(x: x, y: y)
         initialHeading = Degrees(try container.decode(Double.self, forKey: .initialHeading))
-                
+        radius = try container.decode(Double.self, forKey: .radius)
     }
     
     // Create an instance of this type, loaded from a specific file
@@ -136,7 +140,7 @@ struct Visualizer: Codable {
         try container.encode(initialPosition.x, forKey: .initialX)
         try container.encode(initialPosition.y, forKey: .initialY)
         try container.encode(initialHeading, forKey: .initialHeading)
-        
+        try container.encode(radius, forKey: .radius)
     }
     
     // Get the text of the JSON representation of this type
@@ -173,6 +177,7 @@ struct Visualizer: Codable {
         turtle?.penUp()
         turtle?.setPosition(to: initialPosition)
         turtle?.setHeading(to: initialHeading)
+        turtle?.setPenSize(to: Int(radius))
         turtle?.penDown()
         canvas?.restoreState()
         
@@ -193,14 +198,14 @@ struct Visualizer: Codable {
             switch character {
             case "0":
                 // Placeholder for changing colour
-                turtle?.setPenSize(to: 80)
+                //turtle?.setPenSize(to: 80)
                 turtle?.setPenColor(to: Color.init(hue: 0, saturation: 40, brightness: 50, alpha: 100))
                 break
             case "1":
-                turtle?.setPenSize(to: 8)
+                //turtle?.setPenSize(to: 8)
                 turtle?.setPenColor(to: .orange)
             case "2":
-                turtle?.setPenSize(to: 5)
+                //turtle?.setPenSize(to: 5)
                 turtle?.setPenColor(to: .red)
             case "+":
                 // Turn to the left
@@ -209,9 +214,13 @@ struct Visualizer: Codable {
                 // Turn to the right
                 turtle?.right(by: angle)
             case "[":
+                radius = radius / (1.5 * reduction)
+                turtle?.setPenSize(to: Int(radius))
                 // Save position and heading
                 turtle?.saveState()
             case "]":
+                radius = radius * (1.5 * reduction)
+                turtle?.setPenSize(to: Int(radius))
                 // Restore position and heading
                 turtle?.restoreState()
             case "B":
