@@ -11,7 +11,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
     var visualizeSystem: Visualizer
     
     var perlinNoise = PerlinGenerator()
-    var step = 0.1
+    var step = 0.03
     
     // This function runs once
     override init() {
@@ -34,10 +34,10 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         system = LindenmayerSystem(axiom: "0XXF",
                                        rules: [
                                         "F": [
-                                            Successor(odds: 1, text: "J[-J][++J]"),
+                                            Successor(odds: 1, text: "J[-J][+J]"),
                                         ],
                                         "J": [
-                                            Successor(odds: 1, text: "XJ[-J][+J]"),
+                                            Successor(odds: 1, text: "XJ[-JB][+JB]"),
                                         ],
                                        ],
                                        generations: 5)

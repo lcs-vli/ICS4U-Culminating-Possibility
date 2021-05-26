@@ -232,7 +232,8 @@ struct Visualizer: Codable {
                 turtle?.restoreState()
             case "B":
                 // Render a small berry
-                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 5, height: 5)
+                canvas?.fillColor = .red
+                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 10, height: 10)
                 
             default:
                 // Any other character means move forward
