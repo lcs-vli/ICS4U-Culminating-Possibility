@@ -22,14 +22,6 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         // Enable faster rendering
         canvas.highPerformance = true
         
-        //let randomValue = Int.random(in: 1...45)
-        //let randomPerlinValue = perlinNoise.perlinNoise(x: Double(canvas.frameCount) * step)
-        //let angle = map(value: randomPerlinValue,
-                                 //fromLower: 0,
-                                 //fromUpper: 1.0,
-                                 //toLower: 0,
-                                 //toUpper: 45)
-        
         //define the L system
         system = LindenmayerSystem(axiom: "0XXF",
                                        rules: [
@@ -88,7 +80,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           length: 50,
                                           reduction: 1.25,
                                           angleLeft: Degrees(Int(angle)),
-                                          angleRight: Degrees(90 - Int(angle)),
+                                          angleRight: Degrees(60 - Int(angle)),
                                           initialPosition: Point(x: 250, y: 50),
                                           initialHeading: 90,
                                           radius: 30)
