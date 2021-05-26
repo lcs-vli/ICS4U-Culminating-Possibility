@@ -47,7 +47,8 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           on: canvas,
                                           length: 50,
                                           reduction: 1.25,
-                                          angle: 45,
+                                          angleLeft: 45,
+                                          angleRight: 45,
                                           initialPosition: Point(x: 250, y: 50),
                                           initialHeading: 90,
                                           radius: 20)
@@ -86,10 +87,11 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           on: canvas,
                                           length: 50,
                                           reduction: 1.25,
-                                          angle: Degrees(Int(angle)),
+                                          angleLeft: Degrees(Int(angle)),
+                                          angleRight: Degrees(90 - Int(angle)),
                                           initialPosition: Point(x: 250, y: 50),
                                           initialHeading: 90,
-                                          radius: 40)
+                                          radius: 30)
         visualizeSystem.render()
         
     }

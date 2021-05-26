@@ -13,7 +13,7 @@ struct Visualizer: Codable {
     
     // Identify what properties should be encoded to JSON
     enum CodingKeys: CodingKey {
-        case system, length, reduction, angle, initialX, initialY, initialHeading, radius
+        case system, length, reduction, angleLeft, angleRight, initialX, initialY, initialHeading, radius
     }
     
     // Canvas to draw on
@@ -37,7 +37,9 @@ struct Visualizer: Codable {
     var reduction: Double
     
     // The angle by which the turtle will turn left or right; in degrees.
-    var angle: Degrees
+    var angleLeft: Degrees
+    
+    var angleRight: Degrees
     
     // Where the turtle begins drawing on the canvas
     var initialPosition: Point
@@ -52,7 +54,8 @@ struct Visualizer: Codable {
          on canvas: Canvas,
          length: Double,
          reduction: Double,
-         angle: Degrees,
+         angleLeft: Degrees,
+         angleRight: Degrees,
          initialPosition: Point,
          initialHeading: Degrees,
          radius: Double) {
@@ -78,7 +81,9 @@ struct Visualizer: Codable {
         self.reduction = reduction
         
         // The angle by which the turtle will turn left or right; in degrees.
-        self.angle = angle
+        self.angleLeft = angleLeft
+        
+        self.angleRight = angleRight
         
         // Where the turtle begins drawing on the canvas
         self.initialPosition = initialPosition
@@ -100,7 +105,8 @@ struct Visualizer: Codable {
         length = try container.decode(Double.self, forKey: .length)
         currentLength = length
         reduction = try container.decode(Double.self, forKey: .reduction)
-        angle = Degrees(try container.decode(Double.self, forKey: .angle))
+        angleLeft = Degrees(try container.decode(Double.self, forKey: .angleLeft))
+        angleRight = Degrees(try container.decode(Double.self, forKey: .angleRight))
         let x = try container.decode(Int.self, forKey: .initialX)
         let y = try container.decode(Int.self, forKey: .initialY)
         initialPosition = Point(x: x, y: y)
@@ -136,7 +142,8 @@ struct Visualizer: Codable {
         try container.encode(system, forKey: .system)
         try container.encode(length, forKey: .length)
         try container.encode(reduction, forKey: .reduction)
-        try container.encode(angle, forKey: .angle)
+        try container.encode(angleLeft, forKey: .angleLeft)
+        try container.encode(angleRight, forKey: .angleRight)
         try container.encode(initialPosition.x, forKey: .initialX)
         try container.encode(initialPosition.y, forKey: .initialY)
         try container.encode(initialHeading, forKey: .initialHeading)
@@ -209,10 +216,10 @@ struct Visualizer: Codable {
                 turtle?.setPenColor(to: .red)
             case "+":
                 // Turn to the left
-                turtle?.left(by: angle)
+                turtle?.left(by: angleLeft)
             case "-":
                 // Turn to the right
-                turtle?.right(by: angle)
+                turtle?.right(by: angleRight)
             case "[":
                 radius = radius / (1.5 * reduction)
                 turtle?.setPenSize(to: Int(radius))
