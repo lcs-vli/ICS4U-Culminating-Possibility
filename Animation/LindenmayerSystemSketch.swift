@@ -8,7 +8,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
     //       Therefore, the line immediately below must always be present.
     var canvas: Canvas
     var system: LindenmayerSystem
-    var visualizeSystem: Visualizer
+    var visualizeSystem: VicVisualizer
     
     var perlinNoise = PerlinGenerator()
     var step = 0.03
@@ -35,7 +35,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                        generations: 5)
         
         //Visualize the system
-        visualizeSystem  = Visualizer(for: system,
+        visualizeSystem  = VicVisualizer(for: system,
                                           on: canvas,
                                           length: 50,
                                           reduction: 1.25,
@@ -75,7 +75,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                  toLower: 0,
                                  toUpper: 45)
         //Visualize the system
-        visualizeSystem  = Visualizer(for: system,
+        visualizeSystem  = VicVisualizer(for: system,
                                           on: canvas,
                                           length: 50,
                                           reduction: 1.25,

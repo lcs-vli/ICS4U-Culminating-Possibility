@@ -1,4 +1,4 @@
-
+//
 //  LindemayerSystemSketch.swift
 //  Animation
 //
@@ -9,11 +9,11 @@ import Foundation
 import CanvasGraphics
 
 // NOTE: This is a completely empty sketch; it can be used as a template.
-struct Visualizer: Codable {
+struct VicVisualizer: Codable {
     
     // Identify what properties should be encoded to JSON
     enum CodingKeys: CodingKey {
-        case system, length, reduction, angle, initialX, initialY, initialHeading, colors
+        case system, length, reduction, angleLeft, angleRight, initialX, initialY, initialHeading, radius
     }
     
     // Canvas to draw on
@@ -37,7 +37,9 @@ struct Visualizer: Codable {
     var reduction: Double
     
     // The angle by which the turtle will turn left or right; in degrees.
-    var angle: Degrees
+    var angleLeft: Degrees
+    
+    var angleRight: Degrees
     
     // Where the turtle begins drawing on the canvas
     var initialPosition: Point
@@ -45,29 +47,18 @@ struct Visualizer: Codable {
     // The initial direction of the turtle
     var initialHeading: Degrees
     
-    // The colors for this L-system
-    var colors: [String: LSColor]
+    var radius: Double
     
     // Initializer to use when creating a visualization directly from code
     init(for system: LindenmayerSystem,
          on canvas: Canvas,
          length: Double,
          reduction: Double,
-         angle: Degrees,
+         angleLeft: Degrees,
+         angleRight: Degrees,
          initialPosition: Point,
          initialHeading: Degrees,
-         colors: [String: LSColor] = [
-            "0": LSColor.black,
-            "1": LSColor.black,
-            "2": LSColor.black,
-            "3": LSColor.black,
-            "4": LSColor.black,
-            "5": LSColor.black,
-            "6": LSColor.black,
-            "7": LSColor.black,
-            "8": LSColor.black,
-            "9": LSColor.black,
-         ]) {
+         radius: Double) {
         
         // Set the canvas we will draw on
         self.canvas = canvas
@@ -90,7 +81,9 @@ struct Visualizer: Codable {
         self.reduction = reduction
         
         // The angle by which the turtle will turn left or right; in degrees.
-        self.angle = angle
+        self.angleLeft = angleLeft
+        
+        self.angleRight = angleRight
         
         // Where the turtle begins drawing on the canvas
         self.initialPosition = initialPosition
@@ -98,8 +91,7 @@ struct Visualizer: Codable {
         // The initial direction of the turtle
         self.initialHeading = initialHeading
         
-        // The colors for this L-system
-        self.colors = colors
+        self.radius = radius
     }
     
     // Create an instance of this type by decoding from JSON
@@ -113,29 +105,13 @@ struct Visualizer: Codable {
         length = try container.decode(Double.self, forKey: .length)
         currentLength = length
         reduction = try container.decode(Double.self, forKey: .reduction)
-        angle = Degrees(try container.decode(Double.self, forKey: .angle))
+        angleLeft = Degrees(try container.decode(Double.self, forKey: .angleLeft))
+        angleRight = Degrees(try container.decode(Double.self, forKey: .angleRight))
         let x = try container.decode(Int.self, forKey: .initialX)
         let y = try container.decode(Int.self, forKey: .initialY)
         initialPosition = Point(x: x, y: y)
         initialHeading = Degrees(try container.decode(Double.self, forKey: .initialHeading))
-        do {
-            try colors = container.decode([String: LSColor].self, forKey: .colors)
-        } catch DecodingError.keyNotFound {
-            print("key wasn't found for color")
-            colors = [
-                "0": LSColor.black,
-                "1": LSColor.black,
-                "2": LSColor.black,
-                "3": LSColor.black,
-                "4": LSColor.black,
-                "5": LSColor.black,
-                "6": LSColor.black,
-                "7": LSColor.black,
-                "8": LSColor.black,
-                "9": LSColor.black,
-             ]
-        }
-
+        radius = try container.decode(Double.self, forKey: .radius)
     }
     
     // Create an instance of this type, loaded from a specific file
@@ -148,11 +124,13 @@ struct Visualizer: Codable {
         let data = try! Data(contentsOf: url)
         
         // Convert the data from the JSON file into an instance of this type
-        self = try! JSONDecoder().decode(Visualizer.self, from: data)
+        self = try! JSONDecoder().decode(VicVisualizer.self, from: data)
 
         // Set the canvas that should be drawn upon
         self.canvas = canvas
         self.turtle = Tortoise(drawingUpon: canvas)
+        
+        canvas.framesPerSecond = 8
 
     }
         
@@ -166,12 +144,12 @@ struct Visualizer: Codable {
         try container.encode(system, forKey: .system)
         try container.encode(length, forKey: .length)
         try container.encode(reduction, forKey: .reduction)
-        try container.encode(angle, forKey: .angle)
+        try container.encode(angleLeft, forKey: .angleLeft)
+        try container.encode(angleRight, forKey: .angleRight)
         try container.encode(initialPosition.x, forKey: .initialX)
         try container.encode(initialPosition.y, forKey: .initialY)
         try container.encode(initialHeading, forKey: .initialHeading)
-        try container.encode(colors, forKey: .colors)
-
+        try container.encode(radius, forKey: .radius)
     }
     
     // Get the text of the JSON representation of this type
@@ -208,6 +186,7 @@ struct Visualizer: Codable {
         turtle?.penUp()
         turtle?.setPosition(to: initialPosition)
         turtle?.setHeading(to: initialHeading)
+        turtle?.setPenSize(to: Int(radius))
         turtle?.penDown()
         canvas?.restoreState()
         
@@ -228,54 +207,36 @@ struct Visualizer: Codable {
             switch character {
             case "0":
                 // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["0"]?.expectedColor() ?? Color.black)
+                //turtle?.setPenSize(to: 80)
+                turtle?.setPenColor(to: Color.init(hue: 0, saturation: 40, brightness: 50, alpha: 100))
+                break
             case "1":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["1"]?.expectedColor() ?? Color.black)
+                //turtle?.setPenSize(to: 8)
+                turtle?.setPenColor(to: .orange)
             case "2":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["2"]?.expectedColor() ?? Color.black)
-            case "3":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["3"]?.expectedColor() ?? Color.black)
-            case "4":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["4"]?.expectedColor() ?? Color.black)
-            case "5":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["5"]?.expectedColor() ?? Color.black)
-            case "6":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["6"]?.expectedColor() ?? Color.black)
-            case "7":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["7"]?.expectedColor() ?? Color.black)
-            case "8":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["8"]?.expectedColor() ?? Color.black)
-            case "9":
-                // Placeholder for changing colour
-                turtle?.setPenColor(to: colors["9"]?.expectedColor() ?? Color.black)
+                //turtle?.setPenSize(to: 5)
+                turtle?.setPenColor(to: .red)
             case "+":
                 // Turn to the left
-                turtle?.left(by: angle)
+                turtle?.left(by: angleLeft)
             case "-":
                 // Turn to the right
-                turtle?.right(by: angle)
+                turtle?.right(by: angleRight)
             case "[":
+                radius = radius / (1.5 * reduction)
+                turtle?.setPenSize(to: Int(radius))
                 // Save position and heading
                 turtle?.saveState()
             case "]":
+                radius = radius * (1.5 * reduction)
+                turtle?.setPenSize(to: Int(radius))
                 // Restore position and heading
                 turtle?.restoreState()
             case "B":
                 // Render a small berry
-                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 5, height: 5)
-            case "a", "b", "c", "d", "e", "f":
-                // Move the turtle forward without drawing a line
-                turtle?.penUp()
-                turtle?.forward(steps: Int(round(currentLength)))
-                turtle?.penDown()
+                canvas?.fillColor = .red
+                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 10, height: 10)
+                
             default:
                 // Any other character means move forward
                 turtle?.forward(steps: Int(round(currentLength)))
