@@ -25,11 +25,12 @@ class LeafSketch: NSObject, Sketchable {
         canvas.highPerformance = true
         
         // Create the basic L-system
-        var leafSystem = LindenmayerSystem(axiom: "++++++++++++++++++FFFLFFFFFRFFFFL",
+        var leafSystem = LindenmayerSystem(axiom: "++++++++++++++++++FFFFLFFFFFFRFFFFFFLFFFFFFFR",
                                                rules: [
                                                 "L": [
                                                     Successor(odds: 1, text: "0----[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]++++"),
                                                     Successor(odds: 1, text: "0------[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]++++++++++"),
+                                                    Successor(odds: 1, text: "0++++++[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]----------"),
                                                 ],
                                                 "R": [
                                                     Successor(odds: 1, text: "0++++++[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]------"),
@@ -40,10 +41,10 @@ class LeafSketch: NSObject, Sketchable {
         // Visualize the system
         var visualizedLeaf = Visualizer(for: leafSystem,
                                             on: canvas,
-                                            length: 40,
+                                            length: 20,
                                             reduction: 3,
                                             angle: 5,
-                                            initialPosition: Point(x: 100, y: 100),
+                                            initialPosition: Point(x: 80, y: 100),
                                             initialHeading: 0,
                                             colors: [
                                                 "0" : LSColor(hue: 113, saturation: 100, brightness: 40, alpha: 100),
@@ -55,10 +56,10 @@ class LeafSketch: NSObject, Sketchable {
         // Visualize the system
         var visualizedLeaf2 = Visualizer(for: leafSystem,
                                             on: canvas,
-                                            length: 40,
+                                            length: 20,
                                             reduction: 3,
                                             angle: 5,
-                                            initialPosition: Point(x: 250, y: 100),
+                                            initialPosition: Point(x: 190, y: 100),
                                             initialHeading: 0,
                                             colors: [
                                                 "0" : LSColor(hue: 113, saturation: 100, brightness: 40, alpha: 100),
@@ -70,10 +71,25 @@ class LeafSketch: NSObject, Sketchable {
         // Visualize the system
         var visualizedLeaf3 = Visualizer(for: leafSystem,
                                             on: canvas,
-                                            length: 40,
+                                            length: 20,
                                             reduction: 3,
                                             angle: 5,
-                                            initialPosition: Point(x: 400, y: 100),
+                                            initialPosition: Point(x: 310, y: 100),
+                                            initialHeading: 0,
+                                            colors: [
+                                                "0" : LSColor(hue: 113, saturation: 100, brightness: 40, alpha: 100),
+                                                "1" : LSColor(hue: 113, saturation: 100, brightness: 50, alpha: 100),
+                                                "2" : LSColor(hue: 113, saturation: 100, brightness: 60, alpha: 100),
+                                                "3" : LSColor(hue: 113, saturation: 100, brightness: 70, alpha: 100),
+                                            ])
+        
+        // Visualize the system
+        var visualizedLeaf4 = Visualizer(for: leafSystem,
+                                            on: canvas,
+                                            length: 20,
+                                            reduction: 3,
+                                            angle: 5,
+                                            initialPosition: Point(x: 420, y: 100),
                                             initialHeading: 0,
                                             colors: [
                                                 "0" : LSColor(hue: 113, saturation: 100, brightness: 40, alpha: 100),
@@ -86,6 +102,7 @@ class LeafSketch: NSObject, Sketchable {
         visualizedLeaf.render()
         visualizedLeaf2.render()
         visualizedLeaf3.render()
+        visualizedLeaf4.render()
         
         
     }
