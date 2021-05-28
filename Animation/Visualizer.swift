@@ -13,7 +13,7 @@ struct Visualizer: Codable {
     
     // Identify what properties should be encoded to JSON
     enum CodingKeys: CodingKey {
-        case system, length, reduction, angle, initialX, initialY, initialHeading, colors
+        case system, length, reduction, angleLeft, angleRight, initialX, initialY, initialHeading, thickness, colors
     }
     
     // Canvas to draw on
@@ -37,7 +37,9 @@ struct Visualizer: Codable {
     var reduction: Double
     
     // The angle by which the turtle will turn left or right; in degrees.
-    var angle: Degrees
+    var angleLeft: Degrees
+    
+    var angleRight: Degrees
     
     // Where the turtle begins drawing on the canvas
     var initialPosition: Point
@@ -48,14 +50,18 @@ struct Visualizer: Codable {
     // The colors for this L-system
     var colors: [String: LSColor]
     
+    var thickness: Double
+    
     // Initializer to use when creating a visualization directly from code
     init(for system: LindenmayerSystem,
          on canvas: Canvas,
          length: Double,
          reduction: Double,
-         angle: Degrees,
+         angleLeft: Degrees,
+         angleRight: Degrees,
          initialPosition: Point,
          initialHeading: Degrees,
+         thickness: Double,
          colors: [String: LSColor] = [
             "0": LSColor.black,
             "1": LSColor.black,
@@ -90,13 +96,17 @@ struct Visualizer: Codable {
         self.reduction = reduction
         
         // The angle by which the turtle will turn left or right; in degrees.
-        self.angle = angle
+        self.angleLeft = angleLeft
+        
+        self.angleRight = angleRight
         
         // Where the turtle begins drawing on the canvas
         self.initialPosition = initialPosition
         
         // The initial direction of the turtle
         self.initialHeading = initialHeading
+        
+        self.thickness = thickness
         
         // The colors for this L-system
         self.colors = colors
@@ -113,11 +123,13 @@ struct Visualizer: Codable {
         length = try container.decode(Double.self, forKey: .length)
         currentLength = length
         reduction = try container.decode(Double.self, forKey: .reduction)
-        angle = Degrees(try container.decode(Double.self, forKey: .angle))
+        angleLeft = Degrees(try container.decode(Double.self, forKey: .angleLeft))
+        angleRight = Degrees(try container.decode(Double.self, forKey: .angleRight))
         let x = try container.decode(Int.self, forKey: .initialX)
         let y = try container.decode(Int.self, forKey: .initialY)
         initialPosition = Point(x: x, y: y)
         initialHeading = Degrees(try container.decode(Double.self, forKey: .initialHeading))
+        thickness = try container.decode(Double.self, forKey: .thickness)
         do {
             try colors = container.decode([String: LSColor].self, forKey: .colors)
         } catch DecodingError.keyNotFound {
@@ -166,10 +178,12 @@ struct Visualizer: Codable {
         try container.encode(system, forKey: .system)
         try container.encode(length, forKey: .length)
         try container.encode(reduction, forKey: .reduction)
-        try container.encode(angle, forKey: .angle)
+        try container.encode(angleLeft, forKey: .angleLeft)
+        try container.encode(angleRight, forKey: .angleRight)
         try container.encode(initialPosition.x, forKey: .initialX)
         try container.encode(initialPosition.y, forKey: .initialY)
         try container.encode(initialHeading, forKey: .initialHeading)
+        try container.encode(thickness, forKey: .thickness)
         try container.encode(colors, forKey: .colors)
 
     }
@@ -226,6 +240,10 @@ struct Visualizer: Codable {
             
             // Render based on this character
             switch character {
+            case "\n":
+                // Ignore line breaks
+                // This allows us to use multi-line strings when defining axioms and rules
+                break
             case "0":
                 // Placeholder for changing colour
                 turtle?.setPenColor(to: colors["0"]?.expectedColor() ?? Color.black)
@@ -258,24 +276,31 @@ struct Visualizer: Codable {
                 turtle?.setPenColor(to: colors["9"]?.expectedColor() ?? Color.black)
             case "+":
                 // Turn to the left
-                turtle?.left(by: angle)
+                turtle?.left(by: angleLeft)
             case "-":
                 // Turn to the right
-                turtle?.right(by: angle)
+                turtle?.right(by: angleRight)
             case "[":
+                radius = radius / (1.5 * reduction)
+                turtle?.setPenSize(to: Int(thickness))
                 // Save position and heading
                 turtle?.saveState()
             case "]":
+                radius = radius * (1.5 * reduction)
+                turtle?.setPenSize(to: Int(thickness))
                 // Restore position and heading
                 turtle?.restoreState()
             case "B":
                 // Render a small berry
-                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 5, height: 5)
-            case "a", "b", "c", "d", "e", "f":
+                canvas?.fillColor = .red
+                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 10, height: 10)
+            case "a", "b", "c", "d", "e":
                 // Move the turtle forward without drawing a line
                 turtle?.penUp()
                 turtle?.forward(steps: Int(round(currentLength)))
                 turtle?.penDown()
+            case "f":
+                turtle?.forward(steps: Int(round(currentLength) / 4))
             default:
                 // Any other character means move forward
                 turtle?.forward(steps: Int(round(currentLength)))
