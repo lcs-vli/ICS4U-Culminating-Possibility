@@ -281,12 +281,12 @@ struct Visualizer: Codable {
                 // Turn to the right
                 turtle?.right(by: angleRight)
             case "[":
-                radius = radius / (1.5 * reduction)
+                thickness = thickness / (1.5 * reduction)
                 turtle?.setPenSize(to: Int(thickness))
                 // Save position and heading
                 turtle?.saveState()
             case "]":
-                radius = radius * (1.5 * reduction)
+                thickness = thickness * (1.5 * reduction)
                 turtle?.setPenSize(to: Int(thickness))
                 // Restore position and heading
                 turtle?.restoreState()
