@@ -4,87 +4,50 @@
     "rules" : {
       "H" : [
         {
-          "text" : "XXI[-I][+IK]",
+          "text" : "XXI[-I][+I]",
           "odds" : 1
         },
-        {
-          "text" : "XXI[--I][+I]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXI[-IK][++I]",
-          "odds" : 3
-        }
       ],
       "F" : [
         {
           "text" : "G[--G][+GK]",
           "odds" : 1
         },
-        {
-          "text" : "G[--G][+G]",
-          "odds" : 3
-        },
-        {
-          "text" : "G[-G][++G]",
-          "odds" : 3
-        }
       ],
       "K" : [
         {
-          "text" : "B[EB++++++++EB++++++EB++++++EB+++++++++EB]",
-          "odds" : 3
+          "text" : "Z[EZ++++++++EZ++++++EZ++++++EZ+++++++++EZ]",
+          "odds" : 1
         }
       ],
       "I" : [
         {
-          "text" : "XE[-J][+E]",
-          "odds" : 3
+          "text" : "XE[-JK][+E]",
+          "odds" : 1
         },
-        {
-          "text" : "XJ[--E][+J]",
-          "odds" : 3
-        },
-        {
-          "text" : "XJ[-E][++J]",
-          "odds" : 3
-        }
       ],
       "G" : [
         {
-          "text" : "X[-H][+H]",
-          "odds" : 3
-        },
-        {
-          "text" : "XX[--HK][+H]",
+          "text" : "X[-H][+HK]",
           "odds" : 1
         },
-        {
-          "text" : "XH[-H][++H]",
-          "odds" : 3
-        }
       ],
       "J" : [
         {
-          "text" : "XXX[-XX][+X]",
-          "odds" : 3
+          "text" : "XX[-XXK][+X]",
+          "odds" : 1
         },
-        {
-          "text" : "XXXX[--XXK][+XX]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXXX[-XK][++X]",
-          "odds" : 3
-        }
       ]
     },
     "generations" : 6
   },
   "length" : 12,
-  "angle" : 15,
-  "initialX" : 260,
+  "angleLeft" : 15,
+  "angleRight" : 15,
+  "initialX" : 365,
   "initialHeading" : 90,
   "reduction" : 1.1000000000000001,
-  "initialY" : 15
+  "thickness" : 15,
+  "initialY" : 10,
+  "color" : 0
 }

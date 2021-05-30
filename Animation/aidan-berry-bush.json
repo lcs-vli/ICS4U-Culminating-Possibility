@@ -5,87 +5,43 @@
       "H" : [
         {
           "text" : "XXI[-I][+I]",
-          "odds" : 3
+          "odds" : 1
         },
-        {
-          "text" : "XI[--I][+I]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXXI[-I][++I]",
-          "odds" : 3
-        }
       ],
       "F" : [
         {
           "text" : "0X[-G][+G][G]",
-          "odds" : 3
+          "odds" : 1
         },
-        {
-          "text" : "0XX[-G][+G][G]",
-          "odds" : 3
-        },
-        {
-          "text" : "0XXX[-G][+G][G]",
-          "odds" : 3
-        }
       ],
       "I" : [
         {
           "text" : "XXJ[-J][+J]",
-          "odds" : 3
-        },
-        {
-          "text" : "XJ[--J][+J]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXXJ[-J][++J]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXX[-XXP][+XP]",
           "odds" : 1
-        }
+        },
       ],
       "G" : [
         {
           "text" : "XXH[-H][+H]",
           "odds" : 3
         },
-        {
-          "text" : "XH[--H][+H]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXXH[-H][++H]",
-          "odds" : 3
-        }
       ],
       "J" : [
         {
-          "text" : "XXX[-XX][+X]",
+          "text" : "XXX[-XXP][+X]",
           "odds" : 1
         },
-        {
-          "text" : "XX[-XXP][+XXX]",
-          "odds" : 3
-        },
-        {
-          "text" : "XXXX[-X][++XX]",
-          "odds" : 1
-        }
       ]
     },
     "generations" : 5
   },
-  "length" : 9,
+  "length" : 5,
   "angleLeft" : 25,
   "angleRight" : 25,
   "initialX" : 450,
   "initialY" : 165,
   "initialHeading" : 90,
   "reduction" : 1.27,
-  "thickness" : 20,
+  "thickness" : 15,
   "color" : 0
 }

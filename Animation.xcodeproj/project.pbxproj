@@ -165,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				54532C812645C45F00060D18 /* aidan-berry-bush.json */,
-				54F1A68D2645BAED007D4060 /* gordon-basic-branching-tree.json */,
 				54F1A68C2645BAED007D4060 /* scott-berry-tree.json */,
+				54F1A68D2645BAED007D4060 /* gordon-basic-branching-tree.json */,
 				5466A54E2649A7F60087C235 /* sihan-tree.json */,
 			);
 			name = SystemCatalog;
