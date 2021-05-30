@@ -9,6 +9,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
     var canvas: Canvas
     var system: LindenmayerSystem
     var visualizeSystem: Visualizer
+    var visualizeSystem2: Visualizer
     
     var perlinNoise = PerlinGenerator()
     var step = 0.02
@@ -43,19 +44,19 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           angleRight: 45,
                                           initialPosition: Point(x: 250, y: 50),
                                           initialHeading: 90,
-                                          thickness: 20,
+                                          thickness: 40,
                                           colors: [
                                               "0" : LSColor(hue: 0, saturation: 40, brightness: 50, alpha: 100),
                                           ])
         
         //var system2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
         //var system3 = Visualizer(fromJSONFile: "scott-berry-tree", drawingOn: canvas)
-        //var system4 = Visualizer(fromJSONFile: "sihan-tree", drawingOn: canvas)
+        visualizeSystem2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
         //var system5 = Visualizer(fromJSONFile: "gordon-basic-branching-tree", drawingOn: canvas)
             
         //render the system
         visualizeSystem.render()
-        //system2.render()
+        visualizeSystem2.render()
         //system3.render()
         //system4.render()
         //system5.render()
@@ -66,13 +67,14 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
-        canvas.fillColor = Color(hue: 132, saturation: 50, brightness: 50, alpha: 100)
+        canvas.fillColor = Color(hue: 132, saturation: 55, brightness: 45, alpha: 100)
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 200)
         
         for color in 0...310{
-            canvas.fillColor = Color(hue: 190 + color/4, saturation: 30 + color/8, brightness: 80 - color/10, alpha: 100)
+            canvas.fillColor = Color(hue: 190 + color/4, saturation: 30 + color/15, brightness: 80 - color/10, alpha: 100)
             canvas.drawRectangle(at: Point(x: 0, y: 200 + color), width: 500, height: 1)
         }
+        
         
         let randomValue = Int.random(in: 1...35)
         
@@ -83,6 +85,13 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                  fromUpper: 1.0,
                                  toLower: 0,
                                  toUpper: 35)
+        
+        visualizeSystem2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
+        visualizeSystem2.angleLeft = Degrees(Int(angle))
+        visualizeSystem2.angleRight = Degrees(40 - Int(angle))
+        visualizeSystem2.colors = ["0" : LSColor(hue: 348, saturation: 90, brightness: 30, alpha: 100),]
+        visualizeSystem2.render()
+        
         //Visualize the system
         visualizeSystem  = Visualizer(for: system,
                                           on: canvas,
@@ -92,7 +101,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           angleRight: Degrees(60 - Int(angle)),
                                           initialPosition: Point(x: 160, y: 25),
                                           initialHeading: 90,
-                                          thickness: 30,
+                                          thickness: 40,
                                           colors: [
                                               "0" : LSColor(hue: 0, saturation: 20, brightness: 30, alpha: 100),
                                           ])

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54532C822645C45F00060D18 /* aidan-berry-bush.json in Resources */ = {isa = PBXBuildFile; fileRef = 54532C812645C45F00060D18 /* aidan-berry-bush.json */; };
 		5466A54F2649A7F60087C235 /* sihan-tree.json in Resources */ = {isa = PBXBuildFile; fileRef = 5466A54E2649A7F60087C235 /* sihan-tree.json */; };
+		549ECC2E2663402C000440D0 /* LeafyPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549ECC2D2663402C000440D0 /* LeafyPlant.swift */; };
 		54A9E947265FDD32000103D4 /* LSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A9E946265FDD32000103D4 /* LSColor.swift */; };
 		54A9E94B265FDD98000103D4 /* Visualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A9E94A265FDD98000103D4 /* Visualizer.swift */; };
 		54A9E94F265FDDF4000103D4 /* LeafSketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A9E94E265FDDF4000103D4 /* LeafSketch.swift */; };
@@ -69,6 +70,7 @@
 /* Begin PBXFileReference section */
 		54532C812645C45F00060D18 /* aidan-berry-bush.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "aidan-berry-bush.json"; sourceTree = "<group>"; };
 		5466A54E2649A7F60087C235 /* sihan-tree.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "sihan-tree.json"; sourceTree = "<group>"; };
+		549ECC2D2663402C000440D0 /* LeafyPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafyPlant.swift; sourceTree = "<group>"; };
 		54A9E946265FDD32000103D4 /* LSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSColor.swift; sourceTree = "<group>"; };
 		54A9E94A265FDD98000103D4 /* Visualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visualizer.swift; sourceTree = "<group>"; };
 		54A9E94E265FDDF4000103D4 /* LeafSketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafSketch.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				54F1A68B2645BAD4007D4060 /* SystemCatalog */,
 				54A9E946265FDD32000103D4 /* LSColor.swift */,
 				54A9E94E265FDDF4000103D4 /* LeafSketch.swift */,
+				549ECC2D2663402C000440D0 /* LeafyPlant.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81064A0C1C130A10007ED524 /* ViewController.swift in Sources */,
+				549ECC2E2663402C000440D0 /* LeafyPlant.swift in Sources */,
 				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
 				819F9E6E26415FDC00C7883F /* LindenmayerSystemSketch.swift in Sources */,
 				54A9E94F265FDDF4000103D4 /* LeafSketch.swift in Sources */,

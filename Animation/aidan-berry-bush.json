@@ -1,6 +1,6 @@
 {
   "system" : {
-    "axiom" : "[-F][+F]",
+    "axiom" : "0[-F][+F]",
     "rules" : {
       "H" : [
         {
@@ -44,7 +44,7 @@
           "odds" : 3
         },
         {
-          "text" : "XXX[-XXB][+XB]",
+          "text" : "XXX[-XXP][+XP]",
           "odds" : 1
         }
       ],
@@ -68,7 +68,7 @@
           "odds" : 1
         },
         {
-          "text" : "XX[-XXB][+XXX]",
+          "text" : "XX[-XXP][+XXX]",
           "odds" : 3
         },
         {
@@ -80,9 +80,12 @@
     "generations" : 5
   },
   "length" : 9,
-  "angle" : 25,
-  "initialX" : 170,
+  "angleLeft" : 25,
+  "angleRight" : 25,
+  "initialX" : 450,
+  "initialY" : 165,
   "initialHeading" : 90,
   "reduction" : 1.27,
-  "initialY" : 175
+  "thickness" : 20,
+  "color" : 0
 }

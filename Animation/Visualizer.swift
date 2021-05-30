@@ -294,6 +294,9 @@ struct Visualizer: Codable {
                 // Render a small berry
                 canvas?.fillColor = .red
                 canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 10, height: 10)
+            case "P":
+                canvas?.fillColor = .purple
+                canvas?.drawEllipse(at: Point(x: 0, y: 0), width: 5, height: 5)
             case "a", "b", "c", "d", "e":
                 // Move the turtle forward without drawing a line
                 turtle?.penUp()

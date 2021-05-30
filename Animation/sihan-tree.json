@@ -39,10 +39,11 @@
     },
     "generations" : 4
   },
-  "length" : 750,
-  "angle" : 35,
-  "initialX" : 5,
-  "initialHeading" : 85,
+  "length" : 100,
   "reduction" : 3,
-  "initialY" : 0
+  "angleLeft" : 35,
+  "angleRight" : 35,
+  "initialPosition" : Point(x: 200, y: 50),
+  "initialHeading" : 85,
+  "thickness" : 5,
 }
