@@ -45,7 +45,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           angleRight: 45,
                                           initialPosition: Point(x: 140, y: 25),
                                           initialHeading: 90,
-                                          thickness: 40,
+                                          thickness: 30,
                                           colors: [
                                               "0" : LSColor(hue: 0, saturation: 40, brightness: 50, alpha: 100),
                                           ])
@@ -116,12 +116,15 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
                                           angleRight: Degrees(60 - Int(angle)),
                                           initialPosition: Point(x: 140, y: 25),
                                           initialHeading: 90,
-                                          thickness: 40,
+                                          thickness: 30,
                                           colors: [
                                               "0" : LSColor(hue: 0, saturation: 20, brightness: 30, alpha: 100),
                                           ])
         visualizeSystem.render()
         
+        canvas.fillColor = Color(hue: 0, saturation: 20, brightness: 30, alpha: 100)
+        canvas.drawCustomShape(with: [Point(x: 135, y: 20), Point(x: 115, y: 20), Point(x: 130, y: 160), Point(x: 140, y: 160)])
+        canvas.drawCustomShape(with: [Point(x: 145, y: 20), Point(x: 165, y: 20), Point(x: 150, y: 160), Point(x: 140, y: 160)])
     }
     
 }
