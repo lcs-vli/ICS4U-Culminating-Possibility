@@ -1,0 +1,28 @@
+{
+  "system" : {
+    "axiom" : "AF",
+    "rules" : {
+      "F" : [
+        {
+          "text" : "F[-F][+F]",
+          "odds" : 1
+        },
+        {
+          "text" : "F[--F][+F]",
+          "odds" : 1
+        },
+        {
+          "text" : "F[-F][++F]",
+          "odds" : 8
+        }
+      ]
+    },
+    "generations" : 3
+  },
+  "length" : 30,
+  "angle" : 30,
+  "initialX" : 300,
+  "initialHeading" : 90,
+  "reduction" : 1.25,
+  "initialY" : 267
+}

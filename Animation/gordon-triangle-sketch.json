@@ -1,0 +1,94 @@
+{
+  "system" : {
+    "axiom" : "GH++++++++++++++++++++++++GH++++++++++++++++++++++++GH++++++++++++++++++++++++",
+    "rules" : {
+      "I" : [
+        {
+          "text" : "FFFFFFFF",
+          "odds" : 1
+        }
+      ],
+      "H" : [
+        {
+          "text" : "FFFF++++++++++++++++++++++++FFFF++++++++++++++++++++++++FFFF++++++++++++++++++++++++",
+          "odds" : 1
+        }
+      ],
+      "G" : [
+        {
+          "text" : "I[------------------H]I",
+          "odds" : 1
+        }
+      ]
+    },
+    "generations" : 3
+  },
+  "length" : 320,
+  "angle" : 5,
+  "initialX" : 100,
+  "colors" : {
+    "7" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "3" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "8" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "4" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "0" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "9" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "5" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "1" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "6" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "2" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    }
+  },
+  "initialHeading" : 0,
+  "reduction" : 4,
+  "initialY" : 100
+}

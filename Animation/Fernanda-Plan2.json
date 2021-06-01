@@ -1,0 +1,52 @@
+{
+  "system" : {
+    "axiom" : "X",
+    "rules" : {
+      "F" : [
+        {
+          "text" : "1FX[FX[+XF]]",
+          "odds" : 1
+        }
+      ],
+      "W" : [
+        {
+          "text" : "2[+F-F+F][++WX]",
+          "odds" : 1
+        }
+      ],
+      "X" : [
+        {
+          "text" : "FF[+XW++X-F[+WX]][-X++F-X]",
+          "odds" : 1
+        }
+      ]
+    },
+    "generations" : 5
+  },
+  "length" : 700,
+  "angle" : 12,
+  "initialX" : 300,
+  "colors" : {
+    "1" : {
+      "hue" : 90,
+      "saturation" : 42,
+      "brightness" : 47,
+      "alpha" : 100
+    },
+    "0" : {
+      "hue" : 0,
+      "saturation" : 0,
+      "brightness" : 0,
+      "alpha" : 100
+    },
+    "2" : {
+      "hue" : 90,
+      "saturation" : 40,
+      "brightness" : 15,
+      "alpha" : 100
+    }
+  },
+  "initialHeading" : 90,
+  "reduction" : 3,
+  "initialY" : 80
+}

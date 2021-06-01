@@ -1,0 +1,62 @@
+{
+  "system" : {
+    "axiom" : "[XXF][-XF][+XF][-F][+F]",
+    "rules" : {
+        "F": [
+             { "text": "[XG][+X[+XXB]L][-X[-XXB]R]",
+              "odds": 1
+              }
+              
+          ],
+          "G": [
+              {
+              "text": "[XH][-XR][+XL]",
+              "odds": 1
+              }
+          ],
+          
+          "H": [
+              {
+              "text": "[XI][-XR][+XL]",
+              "odds": 1
+              }
+          ],
+          
+          "I": [
+              {
+              "text": "[XB][-J][+J]",
+              "odds": 1
+              }
+          ],
+          
+          "J": [
+              {
+              "text": "[-XB][+XB]",
+              "odds": 1
+              }
+          ],
+          
+          "L": [
+              {
+              "text": "[+XB][XB]",
+              "odds": 1
+              }
+          ],
+          "R": [
+              {
+              "text": "[-XB][XB]",
+              "odds": 1
+              }
+          ],
+    },
+    "generations" : 5
+  },
+  "length" : 100,
+  "angle" : 18,
+  "initialX" : 250,
+  "initialHeading" : 90,
+  "reduction" : 1.25,
+  "initialY" : 100
+}
+
+

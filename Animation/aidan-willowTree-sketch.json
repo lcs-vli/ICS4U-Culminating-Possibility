@@ -1,0 +1,70 @@
+{
+  "system" : {
+    "axiom" : "0FFFF[++++L][----L]L",
+    "rules" : {
+      "G" : [
+        {
+          "text" : "0F[++FS][--FS]",
+          "odds" : 1
+        },
+        {
+          "text" : "0F[+++FS][---FS]",
+          "odds" : 2
+        }
+      ],
+      "S" : [
+        {
+          "text" : "3W[-F+FF][+F-FF][--F++FFF][++F--FFF]FFFF",
+          "odds" : 1
+        },
+        {
+          "text" : "3W[-F+F][+F-F][--F++FF][++F--FF]FFF",
+          "odds" : 2
+        },
+        {
+          "text" : "3W[-F+FFF][+F-FFF][--F++FFFF][++F--FFFF]FFFFF",
+          "odds" : 1
+        }
+      ],
+      "L" : [
+        {
+          "text" : "0F[++G][--G]",
+          "odds" : 1
+        }
+      ]
+    },
+    "generations" : 3
+  },
+  "length" : 30,
+  "angle" : 10,
+  "initialX" : 250,
+  "colors" : {
+    "3" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 70,
+      "alpha" : 100
+    },
+    "1" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 50,
+      "alpha" : 100
+    },
+    "2" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 60,
+      "alpha" : 100
+    },
+    "0" : {
+      "hue" : 34,
+      "saturation" : 69,
+      "brightness" : 18,
+      "alpha" : 100
+    }
+  },
+  "initialHeading" : 90,
+  "reduction" : 1,
+  "initialY" : 100
+}

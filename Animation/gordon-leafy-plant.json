@@ -1,0 +1,130 @@
+{
+  "system" : {
+    "axiom" : "4XXXHHHH",
+    "rules" : {
+      "H" : [
+        {
+          "text" : "4FIH[+++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "++4FIH[+++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "+4FIH[+++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "--4FIH[+++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "-4FIH[+++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIH[+++++FI][-------FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIH[++++FI][-----FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIH[------FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIH[------FI][+++++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIH[--------FI][++++++FI]",
+          "odds" : 3
+        },
+        {
+          "text" : "4FIF[++++FIF]",
+          "odds" : 1
+        },
+        {
+          "text" : "4FIF[------FIF]",
+          "odds" : 1
+        }
+      ],
+      "F" : [
+        {
+          "text" : "FF",
+          "odds" : 1
+        }
+      ],
+      "I" : [
+        {
+          "text" : "4FFF",
+          "odds" : 1
+        },
+        {
+          "text" : "[++++++FL]",
+          "odds" : 8
+        },
+        {
+          "text" : "[------FL]",
+          "odds" : 8
+        }
+      ],
+      "L" : [
+        {
+          "text" : "---0[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]",
+          "odds" : 1
+        },
+        {
+          "text" : "+++0[++++++F--F--F--F--F--F--F]1[+++++F--F--F--F--F--F]2[++++F--F--F--F--F]3[fFFF]2[----F++F++F++F++F]1[-----F++F++F++F++F++F]0[------F++F++F++F++F++F++F]",
+          "odds" : 1
+        }
+      ],
+      "X" : [
+        {
+          "text" : "X",
+          "odds" : 1
+        },
+        {
+          "text" : "XX",
+          "odds" : 1
+        }
+      ]
+    },
+    "generations" : 4
+  },
+  "length" : 180,
+  "angle" : 5,
+  "initialX" : 100,
+  "colors" : {
+    "3" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 70,
+      "alpha" : 100
+    },
+    "1" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 50,
+      "alpha" : 100
+    },
+    "2" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 60,
+      "alpha" : 100
+    },
+    "0" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 40,
+      "alpha" : 100
+    }
+  },
+  "initialHeading" : 90,
+  "reduction" : 3,
+  "initialY" : 100
+}

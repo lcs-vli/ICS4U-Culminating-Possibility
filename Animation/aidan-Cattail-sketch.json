@@ -1,0 +1,78 @@
+{
+  "system" : {
+    "axiom" : "0[FF][+FF][-FF][++F-F][--F+F]",
+    "rules" : {
+      "G" : [
+        {
+          "text" : "2L+V+L",
+          "odds" : 1
+        },
+        {
+          "text" : "2L-V-L",
+          "odds" : 1
+        },
+        {
+          "text" : "2VLL",
+          "odds" : 1
+        }
+      ],
+      "F" : [
+        {
+          "text" : "1[GG][G-G]",
+          "odds" : 1
+        },
+        {
+          "text" : "1[G-G][G][G+]",
+          "odds" : 1
+        },
+        {
+          "text" : "1[G+G][G-G][G]",
+          "odds" : 1
+        }
+      ],
+      "L" : [
+        {
+          "text" : "3KK",
+          "odds" : 4
+        },
+        {
+          "text" : "3KKKKB",
+          "odds" : 1
+        }
+      ]
+    },
+    "generations" : 3
+  },
+  "length" : 8,
+  "angle" : 10,
+  "initialX" : 100,
+  "colors" : {
+    "3" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 70,
+      "alpha" : 100
+    },
+    "1" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 50,
+      "alpha" : 100
+    },
+    "2" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 60,
+      "alpha" : 100
+    },
+    "0" : {
+      "hue" : 113,
+      "saturation" : 100,
+      "brightness" : 40,
+      "alpha" : 100
+    }
+  },
+  "initialHeading" : 90,
+  "reduction" : 1,
+  "initialY" : 100
+}
