@@ -11,7 +11,7 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
     var visualizeSystem: Visualizer
     var visualizeSystem2: Visualizer
     var visualizeSystem3: Visualizer
-    var visualizeSystem4: Visualizer
+    //var visualizeSystem4: Visualizer
     var perlinNoise = PerlinGenerator()
     var step = 0.02
     
@@ -52,13 +52,13 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
 
         visualizeSystem2 = Visualizer(fromJSONFile: "aidan-berry-bush", drawingOn: canvas)
         visualizeSystem3 = Visualizer(fromJSONFile: "scott-berry-tree", drawingOn: canvas)
-        visualizeSystem4 = Visualizer(fromJSONFile: "Fernanda-Plan2", drawingOn: canvas)
+        //visualizeSystem4 = Visualizer(fromJSONFile: "Fernanda-Plan2", drawingOn: canvas)
             
         //render the systems
         visualizeSystem.render()
         visualizeSystem2.render()
         visualizeSystem3.render()
-        visualizeSystem4.render()
+        //visualizeSystem4.render()
         
         
     }
@@ -109,11 +109,11 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         visualizeSystem3.colors = ["0" : LSColor(hue: 348, saturation: 80, brightness: 20, alpha: 100),]
         visualizeSystem3.render()
         
-        //render visualizeSystem4
-        visualizeSystem4 = Visualizer(fromJSONFile: "Fernanda-Plan2", drawingOn: canvas)
-        visualizeSystem4.angleLeft = Degrees(Int(angle))
-        visualizeSystem4.angleRight = Degrees(35 - Int(angle))
-        visualizeSystem4.render()
+//        render visualizeSystem4
+//        visualizeSystem4 = Visualizer(fromJSONFile: "Fernanda-Plan2", drawingOn: canvas)
+//        visualizeSystem4.angleLeft = Degrees(Int(angle))
+//        visualizeSystem4.angleRight = Degrees(35 - Int(angle))
+//        visualizeSystem4.render()
         
         //Visualize the system
         visualizeSystem  = Visualizer(for: system,
@@ -132,8 +132,8 @@ class LindenmayerSystemSketch: NSObject, Sketchable {
         
         // add to the trunk of my tree
         canvas.fillColor = Color(hue: 0, saturation: 20, brightness: 30, alpha: 100)
-        canvas.drawCustomShape(with: [Point(x: 135, y: 10), Point(x: 115, y: 10), Point(x: 130, y: 160), Point(x: 140, y: 160)])
-        canvas.drawCustomShape(with: [Point(x: 145, y: 10), Point(x: 165, y: 10), Point(x: 150, y: 160), Point(x: 140, y: 160)])
+        canvas.drawCustomShape(with: [Point(x: 120, y: 19), Point(x: 130, y: 160), Point(x: 150, y: 160), Point(x: 160, y: 19)])
+        //canvas.drawCustomShape(with: [Point(x: 410, y: 20), Point(x: 420, y: 160), Point(x: 440, y: 160), Point(x: 450, y: 20)])
     }
     
 }

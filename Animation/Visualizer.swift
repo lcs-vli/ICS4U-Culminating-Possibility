@@ -166,7 +166,7 @@ struct Visualizer: Codable {
         self.canvas = canvas
         self.turtle = Tortoise(drawingUpon: canvas)
         
-        canvas.framesPerSecond = 10
+        canvas.framesPerSecond = 20
 
     }
         

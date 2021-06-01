@@ -26,7 +26,7 @@
   "length" : 700,
   "angleLeft" : 12,
   "angleRight" : 12,
-  "initialX" : 400,
+  "initialX" : 200,
   "colors" : {
     "1" : {
       "hue" : 20,
@@ -49,6 +49,6 @@
   },
   "initialHeading" : 90,
   "reduction" : 3,
-  "initialY" : 5,
-  "thickness" : 25,
+  "initialY" : 15,
+  "thickness" : 10,
 }
