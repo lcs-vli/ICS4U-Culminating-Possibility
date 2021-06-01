@@ -165,6 +165,8 @@ struct Visualizer: Codable {
         // Set the canvas that should be drawn upon
         self.canvas = canvas
         self.turtle = Tortoise(drawingUpon: canvas)
+        
+        canvas.framesPerSecond = 10
 
     }
         

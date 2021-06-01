@@ -71,7 +71,8 @@
     "generations" : 5
   },
   "length" : 30,
-  "angle" : 15,
+  "angleLeft" : 15,
+  "angleRight" : 15,
   "initialX" : 250,
   "initialHeading" : 90,
   "reduction" : 2.2,
@@ -101,6 +102,7 @@
       "alpha" : 100
     }
   },
-  "initialY" : 100
+  "initialY" : 100,
+  "thickness" : 25,
 }
 

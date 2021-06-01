@@ -4,19 +4,19 @@
     "rules" : {
       "F" : [
         {
-          "text" : "1FX[FX[+XF]]",
+          "text" : "1FX[-FX[+XF]]",
           "odds" : 1
         }
       ],
       "W" : [
         {
-          "text" : "2[+F-F+F][++WX]",
+          "text" : "2[+F-F+F][+WX]",
           "odds" : 1
         }
       ],
       "X" : [
         {
-          "text" : "FF[+XW++X-F[+WX]][-X++F-X]",
+          "text" : "FF[+XW+X-F[+WX]][-X+F-X]",
           "odds" : 1
         }
       ]
@@ -24,13 +24,14 @@
     "generations" : 5
   },
   "length" : 700,
-  "angle" : 12,
-  "initialX" : 300,
+  "angleLeft" : 12,
+  "angleRight" : 12,
+  "initialX" : 400,
   "colors" : {
     "1" : {
-      "hue" : 90,
-      "saturation" : 42,
-      "brightness" : 47,
+      "hue" : 20,
+      "saturation" : 70,
+      "brightness" : 30,
       "alpha" : 100
     },
     "0" : {
@@ -42,11 +43,12 @@
     "2" : {
       "hue" : 90,
       "saturation" : 40,
-      "brightness" : 15,
+      "brightness" : 50,
       "alpha" : 100
     }
   },
   "initialHeading" : 90,
   "reduction" : 3,
-  "initialY" : 80
+  "initialY" : 5,
+  "thickness" : 25,
 }

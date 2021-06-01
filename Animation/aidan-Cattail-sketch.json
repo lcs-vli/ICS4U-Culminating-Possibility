@@ -44,7 +44,8 @@
     "generations" : 3
   },
   "length" : 8,
-  "angle" : 10,
+  "angleLeft" : 10,
+  "angleRight" : 10,
   "initialX" : 100,
   "colors" : {
     "3" : {
@@ -74,5 +75,6 @@
   },
   "initialHeading" : 90,
   "reduction" : 1,
-  "initialY" : 100
+  "initialY" : 100,
+  "thickness" : 25,
 }
